@@ -1,0 +1,49 @@
+<app-header></app-header>
+
+<ion-text id="statusMessage" class="statusMessage">{{statusMessage}}</ion-text>
+
+<ion-content *ngIf="isLoggedIn" class="ion-padding">
+  <form (ngSubmit)="create()">
+    <ion-list>
+      <ion-item>
+        <ion-label color="dark" position="floating"><b>Product name:</b></ion-label>
+        <ion-input [(ngModel)]="prodName" name="prodName" clearInput="true" color="primary" inputmode="text"
+          placeholder="Enter product name" required="true"></ion-input>
+        <ion-icon name="pricetag" color="primary" slot="end"></ion-icon>
+      </ion-item>
+    </ion-list>
+    <ion-list>
+      <ion-item>
+        <ion-label color="dark" position="floating"><b>Product description</b></ion-label>
+        <ion-textarea [(ngModel)]="prodDesc" name="prodDesc" spellcheck="true" clearInput="true" color="primary"
+          placeholder="Enter product description" auto-grow="true" required="true">
+        </ion-textarea>
+        <ion-icon name="information-circle" color="primary" slot="end"></ion-icon>
+      </ion-item>
+    </ion-list>
+    <ion-list>
+      <ion-item>
+        <ion-label color="dark" position="floating"><b>Product price</b></ion-label>
+        <ion-input [(ngModel)]="prodPrice" name="prodPrice" clearInput="true" clearOnEdit="true" color="primary"
+          inputmode="numeric" min="0" step="1" type="number" value="number" placeholder="Price in cents"
+          required="true">
+        </ion-input>
+        <ion-icon name="logo-euro" color="primary" slot="end"></ion-icon>
+      </ion-item>
+    </ion-list>
+    <ion-list>
+      <ion-item>
+        <ion-img [src]="'/assets/gray.png'" id="imagePreview" style="height:200px; display: block;"></ion-img>
+        <ion-label color="dark" position="floating"><b>Product price</b></ion-label>
+        <ion-input position="floating" id="imageInput" type="file" accept="image/*" color="primary"
+          placeholder="Upload image of product" (change)="setPreview($event);setImage($event);" required="true">
+        </ion-input>
+        <ion-icon id="btnClearImage" (click)="resetPreview()" color="dark" name="close-circle-outline" slot="end">
+        </ion-icon>
+        <ion-icon color="primary" name="image" slot="end"></ion-icon>
+      </ion-item>
+    </ion-list>
+
+    <ion-button class="ion-float-right" type="submit">Create</ion-button>
+  </form>
+</ion-content>

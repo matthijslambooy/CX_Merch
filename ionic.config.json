@@ -1,0 +1,7 @@
+{
+  "name": "cx_api_mobile",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}

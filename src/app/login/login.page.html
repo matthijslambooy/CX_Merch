@@ -1,0 +1,36 @@
+<app-header></app-header>
+<ion-content class="ion-padding" *ngIf="!isLoggedIn">
+  <ion-text color="dark" class="ion-text-center">
+    <h1>Login</h1>
+  </ion-text>
+  <ion-text class="errorMessage" color="danger">{{errorMessage}}</ion-text>
+  <form (ngSubmit)="login()">
+    <ion-list>
+      <ion-item>
+        <ion-label color="primary" position="floating">Username</ion-label>
+        <ion-input [(ngModel)]="username" (keyup)="resetErrors()" (keyup.enter)="login()" name="username"
+          clearInput="true" type="email" inputmode="email" color="primary" inputmode="text" placeholder="Enter username"
+          required="true"></ion-input>
+        <!-- <ion-icon name="user" color="primary" slot="end"></ion-icon> -->
+      </ion-item>
+    </ion-list>
+    <ion-list>
+      <ion-item>
+        <ion-label color="primary" position="floating">Password</ion-label>
+        <ion-input [(ngModel)]="password" (keyup)="resetErrors()" (keyup.enter)="login()" name="password"
+          inputmode="password" type="password" clearInput="true" color="primary" placeholder="Enter password"
+          required="true">
+        </ion-input>
+        <!-- <ion-icon name="information-circle" color="primary" slot="end"></ion-icon> -->
+      </ion-item>
+    </ion-list>
+    <ion-button class="ion-float-right" type="submit">Login</ion-button>
+  </form>
+</ion-content>
+
+<ion-content *ngIf="isLoggedIn">
+  <ion-text>
+    <h1>Logout</h1>
+  </ion-text>
+  <ion-button (click)="logout()">Logout</ion-button>
+</ion-content>

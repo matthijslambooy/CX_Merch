@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="products"></ion-back-button>
+    </ion-buttons>
+    <ion-title *ngIf="product.data">{{product.data.Name}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-card *ngIf="product.data">
+    <ion-img src="https://cxmerchandise.cx-develop.nl/engine/api/cxmerch/download/product/{{product.key}}/Image" alt="" style="height: 200px; width:100%;"></ion-img>
+    <ion-card-header>
+      <ion-card-title>
+        {{ product.data.Name }}
+      </ion-card-title>
+      <ion-card-subtitle>
+        €{{ product.data.Selling_price / 100 }}
+      </ion-card-subtitle>
+    </ion-card-header>
+    <ion-card-content>
+          {{ product.data.Description }}
+    </ion-card-content>
+
+  </ion-card>     
+</ion-content>

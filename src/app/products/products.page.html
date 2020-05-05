@@ -1,0 +1,28 @@
+<app-header></app-header>
+
+<ion-content class="ion-padding">
+  <ion-card id="product{{product.key}}" *ngFor=" let product of this.products">
+    <ion-img src="https://cxmerchandise.cx-develop.nl/engine/api/cxmerch/download/product/{{product.key}}/Image" alt=""
+      style="height: 200px; width:100%;"></ion-img>
+    <ion-card-content>
+      <ion-card-header>
+        <ion-card-subtitle>€{{product.data.Selling_price / 100}}</ion-card-subtitle>
+        <ion-card-title>{{product.data.Name}}</ion-card-title>
+      </ion-card-header>
+      <p>
+        {{product.data.Description.length > 100 ?
+              product.data.Description.substring(0,100) + "... " : product.data.Description + " "}}</p>
+      <ion-item>
+        <ion-button [routerLink]="'/products/product/' + product.key" color="dark">Meer info...</ion-button>
+        <ion-button *ngIf="isLoggedIn" (click)="delete(product.key, product.data.Name)" color="danger">Delete
+        </ion-button>
+      </ion-item>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
+
+<ion-fab *ngIf="isLoggedIn" [routerLink]="'/products/new'" vertical="bottom" horizontal="end" slot="fixed">
+  <ion-fab-button>
+    <ion-icon name="add"></ion-icon>
+  </ion-fab-button>
+</ion-fab>
