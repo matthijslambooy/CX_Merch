@@ -7,8 +7,6 @@ import { Storage } from '@ionic/storage';
   providedIn: 'root'
 })
 export class AuthService {
-  // testemail = 'm.helderman@crossmarx.nl';
-  // testpass = 'Asdfasdfasdf1!';
   urlLogin = 'https://cxmerchandise.cx-develop.nl/engine/api/cxmerch/login';
 
   constructor(
