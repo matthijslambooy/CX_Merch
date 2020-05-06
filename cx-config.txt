@@ -1,3 +1,0 @@
-# Test account credentials
-username: test@cxmerch.nl
-password: Thisisatestaccount1!
