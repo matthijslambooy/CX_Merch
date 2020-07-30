@@ -85,5 +85,14 @@
       "ios",
       "android"
     ]
+  },
+  "main": "karma.conf.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/matthijslambooy/CX_Merch.git"
+  },
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/matthijslambooy/CX_Merch/issues"
   }
 }
