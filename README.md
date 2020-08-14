@@ -84,12 +84,15 @@ Start Docker Desktop. In the projects root directory, there is a DockerFile. Wit
 
 **Build**
 ```bash
-docker build -t cx_api_ionic_angular .
+docker build -t cx_api_ionic_angular 
 ```
 **Run**
 ```bash
-docker run -p 8080:8080 -d cx_api_ionic_angular
+docker run -p 8100:8100 -p 32729:32729 -d cx_api_ionic_angular
 ```
+
+The webserver can then be accessed via the docker-machine ip and the chosen port. The docker-machine default ip is given by 192.168.99.100 and the port is 8100. Therefore in the default case the webserver can be accessed via the url http://192.168.99.100:8100.
+
 
 ## Support
 You can contact the following CrossmarX employees in order for additional support.
