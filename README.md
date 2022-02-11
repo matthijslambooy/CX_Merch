@@ -84,7 +84,7 @@ Start Docker Desktop. In the projects root directory, there is a DockerFile. Wit
 
 **Build**
 ```bash
-docker build -t cx_api_ionic_angular 
+docker build -t cx_api_ionic_angular .
 ```
 **Run**
 ```bash
